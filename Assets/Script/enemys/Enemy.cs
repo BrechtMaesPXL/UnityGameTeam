@@ -3,15 +3,18 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 3f;
+    public float size = 1f;
+    public int health = 2;
     public float rotationAmplitude = 45f;
     public float rotationFrequency = 2f;
     public Transform target;
-
     public GameObject deathEffect;
     private float timeCounter;
 
-    void Awake()
+    protected virtual void Awake()
     {
+        transform.localScale = Vector3.one * 0.5f * size;
+
     }
     void Update()
     {
@@ -37,4 +40,13 @@ public class Enemy : MonoBehaviour
         Instantiate(deathEffect, transform.position, deathEffect.transform.rotation);
         Destroy(gameObject);
     }
+    public void DoDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Kill();
+        }
+    }
+
 }

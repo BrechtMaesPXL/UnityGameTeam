@@ -513,6 +513,17 @@
                     "action": "relode",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be129645-ad9f-4474-9e16-f455c765fe9c",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "relode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
