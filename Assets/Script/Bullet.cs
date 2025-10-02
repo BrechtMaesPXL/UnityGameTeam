@@ -20,11 +20,12 @@ public class Bullet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && other.TryGetComponent<Enemy>(out var enemy))
         {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
+            enemy.DoDamage(1);
+            Destroy(gameObject); 
         }
     }
+
 
 }

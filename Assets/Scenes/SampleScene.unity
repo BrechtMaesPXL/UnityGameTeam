@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &49976285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveCanvasController
   nextButton: {fileID: 928532280}
+  gameManager: {fileID: 0}
   Instance: {fileID: 1980208815}
 --- !u!114 &49976286
 MonoBehaviour:
@@ -1254,6 +1255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBaraks
   enemyBasePrefab: {fileID: -9106375681065960833, guid: 4d0e3b93d18a22b4792336cbd3ba3769, type: 3}
+  fastEnemyPrefab: {fileID: -5965572948464288951, guid: 62ab927527ffb4a4b9f92b9b04d6743a, type: 3}
+  bigEnemyPrefab: {fileID: 961742235727941631, guid: 7614d591265e7c44d850bfcae15ed885, type: 3}
   spawnRadius: 5
 --- !u!4 &954086528
 Transform:
