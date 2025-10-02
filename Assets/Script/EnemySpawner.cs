@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
         // All enemies spawned
         if (currentEnemyIndex >= enemies.Count)
         {
-            GameManager.Instance.WaveEnd();
+            GameManager.Instance.PauseGame();
             return;
         }
 

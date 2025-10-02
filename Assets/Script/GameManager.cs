@@ -89,4 +89,6 @@ public class GameManager : MonoBehaviour
     public void UpdateWave() => waveText.text = "Day " + currentWave;
 
     public int returnWave() => currentWave;
+
+    internal void PauseGame() => SetState(pausedState);
 }
