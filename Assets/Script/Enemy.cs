@@ -31,4 +31,10 @@ public class Enemy : MonoBehaviour
     {
         Instantiate(deathEffect, transform.position, deathEffect.transform.rotation);
     }
+
+    void Kill()
+    {
+        Instantiate(deathEffect, transform.position, deathEffect.transform.rotation);
+        Destroy(gameObject);
+    }
 }
