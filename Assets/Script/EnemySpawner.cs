@@ -14,10 +14,12 @@ public class EnemySpawner : MonoBehaviour
     {
         if (paused) return;
 
-        if (GameManager.Instance.CurrentState is PausedState) return;
+        if (GameManager.Instance.CurrentState is PausedState
+        || GameManager.Instance.CurrentState is WaveEndState) return;
+
         if (currentEnemyIndex >= enemies.Count)
         {
-            GameManager.Instance.PauseGame();
+            GameManager.Instance.WaveEnd();
             return;
         }
 
