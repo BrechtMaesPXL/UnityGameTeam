@@ -1,7 +1,5 @@
-using System;
-using System.Collections.Generic;
 using TMPro;
-using Unity.AppUI.UI;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -33,12 +31,14 @@ public class GameManager : MonoBehaviour
     public EnemyBaraks baraks;
     public UnityEngine.Canvas waveCanvas;
 
-
+    public GameObject upgradeButtons;
+    public Nozzle nozzle;
 
 
     void Awake()
     {
-        waveCanvas.enabled = true; 
+        upgradeButtons.SetActive(false);
+        waveCanvas.enabled = true;
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
@@ -84,11 +84,22 @@ public class GameManager : MonoBehaviour
     {
         currentWave++;
         UpdateWave();
-    } 
+    }
 
     public void UpdateWave() => waveText.text = "Day " + currentWave;
 
     public int returnWave() => currentWave;
 
     internal void PauseGame() => SetState(pausedState);
+
+    public void TriggerUpgrades()
+    {
+        upgradeButtons.SetActive(true);
+        Button[] buttons = upgradeButtons.GetComponentsInChildren<Button>();
+        Debug.Log("Found " + buttons.Length + " buttons");
+        buttons[0].GetComponentInChildren<Text>().text = "More Ammo";
+        buttons[0].onClick.AddListener(() => { });
+    }
+
+
 }

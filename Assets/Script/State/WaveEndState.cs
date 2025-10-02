@@ -4,8 +4,8 @@ public class WaveEndState : State
 {
     public void OnEnter(GameManager gameManager)
     {
-
-        gameManager.gameStatusText.text = "Wave Complete! Take a breather."; 
+        gameManager.gameStatusText.text = "Wave Complete! Take a breather.";
+        gameManager.TriggerUpgrades();
         gameManager.NextWave();   
         Debug.Log("Entered wave end state");
     }

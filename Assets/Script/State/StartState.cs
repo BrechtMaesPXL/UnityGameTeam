@@ -6,7 +6,6 @@ public class StartState : State
     {
         gameManager.gameStatusText.text = "Clock in for your shift";
         Debug.Log("Entered Start State");
-
     }
 
     public void OnExit(GameManager gameManager)

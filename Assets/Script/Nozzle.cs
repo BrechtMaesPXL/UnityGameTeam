@@ -91,8 +91,7 @@ public class Nozzle : MonoBehaviour
 
     private bool AmmunitionCheck()
     {
-        if (ammunition <= 0)
-            return false;
+        if (ammunition <= 0) return false;
 
         ammunition -= 1;
         UpdateAmmoUI();
