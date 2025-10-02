@@ -11,6 +11,8 @@ public class PlayingState : State
     // [System.Obsolete]
     public void OnEnter(GameManager gameManager)
     {
+        gameManager.gameStatusText.text = "";
+
         gM = gameManager;
         spawn = Object.FindObjectOfType<EnemySpawner>();
         int amount = gM.returnWave() * 10;

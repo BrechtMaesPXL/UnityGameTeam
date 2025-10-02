@@ -9,14 +9,12 @@ public class EnemySpawner : MonoBehaviour
     private float countDown;
 
     private List<Enemy> enemies = new List<Enemy>();
-    private int currentEnemyIndex = 0; // Track which enemy to spawn next
-
+    private int currentEnemyIndex = 0; 
     void Update()
     {
         if (paused) return;
 
-        if (GameManager.Instance.CurrentState is WaveEndState) return;
-        // All enemies spawned
+        if (GameManager.Instance.CurrentState is PausedState) return;
         if (currentEnemyIndex >= enemies.Count)
         {
             GameManager.Instance.PauseGame();
@@ -43,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
         enemy.target = target.transform;
 
         Vector3 randomDirection = Random.insideUnitSphere;
-        randomDirection.z = 0; // Keep on 2D plane
+        randomDirection.z = 0; 
 
         enemy.transform.position = transform.position + randomDirection * range;
         enemy.transform.up = target.transform.position - enemy.transform.position;
@@ -52,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
     public void EnemyListAdd(List<Enemy> newEnemies)
     {
         enemies = newEnemies;
-        currentEnemyIndex = 0; // Reset spawn index for new wave
-        countDown = 0; // Start spawning immediately
+        currentEnemyIndex = 0; 
+        countDown = 0; 
     }
 }
